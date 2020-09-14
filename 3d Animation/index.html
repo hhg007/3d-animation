@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>3D modelling</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="demo">
+      <model-viewer id="model" src="RobotExpressive.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls skybox-image="stadium_01_2k.hdr" animation-name="Running" autoplay ar></model-viewer>
+      <div class="btn-container">
+        <button type="button" onclick="stop()">Stop</button>
+        <button type="button" onclick="run()">Run</button>
+        <button type="button" onclick="wave()">Wave</button>
+      </div>
+
+        </div>
+        <script type="text/javascript">
+          var model=document.getElementById("model");
+          function stop(){
+            model.animationName='none';
+          }
+          function run(){
+            model.animationName='Running';
+          }
+          function wave(){
+            model.animationName='Wave';
+          }
+        </script>
+  </body>
+</html>
